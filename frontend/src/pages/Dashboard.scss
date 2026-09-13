@@ -1,0 +1,83 @@
+@use "../styles/tokens" as *;
+
+.dashboard {
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 36px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  &__section {
+    margin-bottom: 40px;
+
+    h2 {
+      font-size: 20px;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1.5px solid $line;
+    }
+  }
+
+  &__empty {
+    color: $muted;
+    font-size: 15px;
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 14px 0;
+      border-bottom: 1px solid $line;
+      font-size: 14px;
+      color: $muted;
+
+      a {
+        flex: 1;
+        color: $ink;
+        font-weight: 600;
+        font-size: 16px;
+        text-decoration: none;
+
+        &:hover {
+          color: $forest;
+        }
+      }
+    }
+  }
+
+  &__status {
+    font-family: $font-mono;
+    text-transform: capitalize;
+    padding: 3px 10px;
+    border-radius: 100px;
+    background: $line;
+
+    &--going {
+      background: #d7ead9;
+      color: $forest-dark;
+    }
+
+    &--interested {
+      background: #f7e6bd;
+      color: #7a5a12;
+    }
+
+    &--not_going {
+      background: #f1d6ce;
+      color: $red-dark;
+    }
+  }
+}

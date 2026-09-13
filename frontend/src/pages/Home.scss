@@ -1,0 +1,78 @@
+@use "../styles/tokens" as *;
+
+.home {
+  &__hero {
+    padding-bottom: 40px;
+    border-bottom: 1.5px solid $line;
+    margin-bottom: 36px;
+
+    h1 {
+      font-size: 52px;
+      max-width: 640px;
+    }
+
+    p {
+      max-width: 480px;
+      color: $muted;
+      font-size: 17px;
+      margin-top: 16px;
+    }
+  }
+
+  &__filters {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+  }
+
+  &__search {
+    flex: 1;
+    min-width: 220px;
+    font-family: $font-body;
+    font-size: 15px;
+    padding: 12px 14px;
+    border: 1.5px solid $line;
+    border-radius: $radius;
+    background: $paper-raised;
+
+    &:focus {
+      border-color: $forest;
+      outline: none;
+    }
+  }
+
+  select {
+    font-family: $font-body;
+    font-size: 14px;
+    padding: 12px 14px;
+    border: 1.5px solid $line;
+    border-radius: $radius;
+    background: $paper-raised;
+    color: $ink;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  &__status {
+    grid-column: 1 / -1;
+    color: $muted;
+    font-size: 15px;
+    padding: 40px 0;
+    text-align: center;
+  }
+}
+
+@media (max-width: 780px) {
+  .home__hero h1 {
+    font-size: 38px;
+  }
+
+  .home__list {
+    grid-template-columns: 1fr;
+  }
+}

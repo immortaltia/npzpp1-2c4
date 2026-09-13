@@ -1,0 +1,71 @@
+@use "../styles/tokens" as *;
+
+.header {
+  background: $forest-dark;
+  border-bottom: 3px solid $marigold;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    gap: 32px;
+  }
+
+  &__logo {
+    font-family: $font-display;
+    font-size: 22px;
+    font-weight: 800;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+
+  &__nav {
+    display: flex;
+    gap: 24px;
+    flex: 1;
+
+    a {
+      color: #d9e2da;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+
+  &__auth {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  &__user {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    margin-right: 4px;
+  }
+
+  .btn-ghost {
+    color: #d9e2da;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+@media (max-width: 720px) {
+  .header__nav {
+    display: none;
+  }
+}

@@ -1,0 +1,41 @@
+@use "../styles/tokens" as *;
+
+.auth {
+  max-width: 420px;
+  margin: 0 auto;
+
+  h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+  }
+
+  &__subtitle {
+    color: $muted;
+    margin-bottom: 32px;
+  }
+
+  form {
+    background: $paper-raised;
+    border: 1.5px solid $line;
+    border-radius: $radius;
+    padding: 28px;
+  }
+
+  .btn {
+    width: 100%;
+    margin-top: 6px;
+  }
+
+  &__switch {
+    margin-top: 20px;
+    text-align: center;
+    color: $muted;
+    font-size: 14px;
+
+    a {
+      color: $forest;
+      font-weight: 600;
+      text-decoration: none;
+    }
+  }
+}

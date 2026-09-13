@@ -1,0 +1,185 @@
+@use "../styles/tokens" as *;
+
+.event-detail {
+  max-width: 860px;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+    border-bottom: 1.5px solid $line;
+    padding-bottom: 24px;
+    margin-bottom: 20px;
+  }
+
+  &__category {
+    font-family: $font-mono;
+    font-size: 12px;
+    color: $red-dark;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  h1 {
+    font-size: 36px;
+    margin: 8px 0 14px;
+  }
+
+  &__meta {
+    margin: 0 0 4px;
+    color: $muted;
+    font-size: 15px;
+  }
+
+  &__owner-actions {
+    display: flex;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+
+  &__tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+  }
+
+  &__tag {
+    background: $marigold;
+    color: $forest-dark;
+    font-family: $font-mono;
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 100px;
+  }
+
+  &__rsvp {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 36px;
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    gap: 32px;
+    margin-bottom: 48px;
+  }
+
+  &__description {
+    h2 {
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    p {
+      color: $ink;
+      line-height: 1.7;
+      white-space: pre-wrap;
+    }
+  }
+
+  &__link {
+    margin-top: 16px;
+    font-size: 14px;
+
+    a {
+      color: $forest;
+    }
+  }
+
+  &__card {
+    background: $paper-raised;
+    border: 1.5px solid $line;
+    border-radius: $radius;
+    padding: 20px;
+
+    h3 {
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
+  }
+
+  &__attendees {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 14px;
+    color: $muted;
+  }
+
+  &__reviews {
+    border-top: 1.5px solid $line;
+    padding-top: 32px;
+
+    h2 {
+      font-size: 22px;
+      margin-bottom: 20px;
+
+      span {
+        color: $muted;
+        font-weight: 500;
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__review-form {
+    background: $paper-raised;
+    border: 1.5px solid $line;
+    border-radius: $radius;
+    padding: 20px;
+    max-width: 420px;
+    margin-bottom: 28px;
+  }
+
+  &__review-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    li {
+      border-bottom: 1px solid $line;
+      padding-bottom: 18px;
+    }
+
+    p {
+      margin: 6px 0 0;
+      color: $ink;
+      line-height: 1.6;
+    }
+  }
+
+  &__review-head {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+
+    span {
+      color: $muted;
+      font-family: $font-mono;
+    }
+  }
+
+  &__no-reviews {
+    color: $muted;
+    border-bottom: none !important;
+  }
+}
+
+@media (max-width: 720px) {
+  .event-detail__body {
+    grid-template-columns: 1fr;
+  }
+
+  .event-detail__header {
+    flex-direction: column;
+  }
+}

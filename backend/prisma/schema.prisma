@@ -1,0 +1,67 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  name      String
+  bio       String?
+  avatar    String?
+  createdAt DateTime @default(now())
+
+  events  Event[]
+  rsvps   Rsvp[]
+  reviews Review[]
+}
+
+model Event {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  coverImage  String?
+  startDate   DateTime
+  location    String
+  isOnline    Boolean  @default(false)
+  onlineUrl   String?
+  category    String
+  tags        String   @default("")
+  createdAt   DateTime @default(now())
+
+  organizerId String
+  organizer   User   @relation(fields: [organizerId], references: [id])
+
+  rsvps   Rsvp[]
+  reviews Review[]
+}
+
+model Rsvp {
+  id        String   @id @default(cuid())
+  status    String
+  createdAt DateTime @default(now())
+
+  userId  String
+  user    User   @relation(fields: [userId], references: [id])
+  eventId String
+  event   Event  @relation(fields: [eventId], references: [id])
+
+  @@unique([userId, eventId])
+}
+
+model Review {
+  id        String   @id @default(cuid())
+  rating    Int
+  comment   String
+  createdAt DateTime @default(now())
+
+  userId  String
+  user    User   @relation(fields: [userId], references: [id])
+  eventId String
+  event   Event  @relation(fields: [eventId], references: [id])
+}

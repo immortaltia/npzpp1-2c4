@@ -1,0 +1,141 @@
+@use "./tokens" as *;
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: $paper;
+  color: $ink;
+  font-family: $font-body;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: $font-display;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0;
+  color: $forest-dark;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font-family: $font-body;
+}
+
+:focus-visible {
+  outline: 3px solid $marigold;
+  outline-offset: 2px;
+}
+
+.container {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: none;
+  border-radius: $radius;
+  padding: 12px 22px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.12s ease, background 0.12s ease;
+
+  &:active {
+    transform: translateY(1px);
+  }
+}
+
+.btn-primary {
+  background: $red;
+  color: #fff;
+
+  &:hover {
+    background: $red-dark;
+  }
+}
+
+.btn-outline {
+  background: transparent;
+  color: $forest-dark;
+  border: 1.5px solid $forest-dark;
+
+  &:hover {
+    background: $forest-dark;
+    color: #fff;
+  }
+}
+
+.btn-ghost {
+  background: transparent;
+  color: $muted;
+
+  &:hover {
+    color: $ink;
+  }
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 18px;
+
+  label {
+    font-size: 13px;
+    font-weight: 600;
+    color: $forest-dark;
+  }
+
+  input,
+  textarea,
+  select {
+    font-family: $font-body;
+    font-size: 15px;
+    padding: 11px 13px;
+    border: 1.5px solid $line;
+    border-radius: $radius;
+    background: $paper-raised;
+    color: $ink;
+
+    &:focus {
+      border-color: $forest;
+    }
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+}
+
+.error-text {
+  color: $red-dark;
+  font-size: 14px;
+  margin: 0 0 14px;
+}
+
+.page {
+  min-height: calc(100vh - 64px);
+  padding: 48px 0 80px;
+}

@@ -1,0 +1,94 @@
+@use "../styles/tokens" as *;
+
+.event-card {
+  display: flex;
+  background: $paper-raised;
+  border: 1.5px solid $line;
+  border-radius: $radius;
+  text-decoration: none;
+  color: $ink;
+  overflow: hidden;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+
+  &:hover {
+    border-color: $forest;
+    transform: translateY(-2px);
+  }
+
+  &__date {
+    width: 84px;
+    flex-shrink: 0;
+    background: $forest;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 8px;
+    text-align: center;
+  }
+
+  &__month {
+    font-family: $font-mono;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    opacity: 0.85;
+  }
+
+  &__day {
+    font-family: $font-display;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  &__time {
+    font-family: $font-mono;
+    font-size: 11px;
+    opacity: 0.85;
+    margin-top: 4px;
+  }
+
+  &__stub {
+    width: 0;
+    border-left: 2px dashed $line;
+    position: relative;
+  }
+
+  &__body {
+    flex: 1;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  &__category {
+    font-family: $font-mono;
+    font-size: 11px;
+    color: $red-dark;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  &__title {
+    font-size: 19px;
+    margin: 0;
+  }
+
+  &__meta {
+    margin: 0;
+    color: $muted;
+    font-size: 14px;
+  }
+
+  &__footer {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: $muted;
+    padding-top: 8px;
+  }
+}

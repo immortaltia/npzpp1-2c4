@@ -1,0 +1,54 @@
+@use "../styles/tokens" as *;
+
+.event-form {
+  max-width: 640px;
+
+  h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+  }
+
+  &__subtitle {
+    color: $muted;
+    margin-bottom: 28px;
+  }
+
+  form {
+    background: $paper-raised;
+    border: 1.5px solid $line;
+    border-radius: $radius;
+    padding: 28px;
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .field--checkbox {
+    label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: $ink;
+      cursor: pointer;
+    }
+
+    input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  .btn {
+    margin-top: 8px;
+  }
+}
+
+@media (max-width: 600px) {
+  .event-form__row {
+    grid-template-columns: 1fr;
+  }
+}
