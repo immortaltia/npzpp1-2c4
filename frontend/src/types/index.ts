@@ -4,14 +4,11 @@ export interface User {
   id: string;
   email: string;
   name: string;
-  bio?: string | null;
-  avatar?: string | null;
 }
 
 export interface Organizer {
   id: string;
   name: string;
-  bio?: string | null;
 }
 
 export interface EventCounts {
@@ -54,7 +51,6 @@ export interface Attendee {
   user: {
     id: string;
     name: string;
-    avatar?: string | null;
   };
 }
 
@@ -66,6 +62,5 @@ export interface Review {
   user: {
     id: string;
     name: string;
-    avatar?: string | null;
   };
 }

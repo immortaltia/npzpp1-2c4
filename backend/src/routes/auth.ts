@@ -36,7 +36,7 @@ router.post("/register", async (req, res) => {
 
   res.status(201).json({
     token,
-    user: { id: user.id, email: user.email, name: user.name, bio: user.bio },
+    user: { id: user.id, email: user.email, name: user.name },
   });
 });
 
@@ -68,7 +68,7 @@ router.post("/login", async (req, res) => {
 
   res.json({
     token,
-    user: { id: user.id, email: user.email, name: user.name, bio: user.bio },
+    user: { id: user.id, email: user.email, name: user.name },
   });
 });
 
@@ -83,8 +83,6 @@ router.get("/me", requireAuth, async (req, res) => {
     id: user.id,
     email: user.email,
     name: user.name,
-    bio: user.bio,
-    avatar: user.avatar,
   });
 });
 

@@ -62,7 +62,7 @@ router.get("/:id", async (req, res) => {
   const event = await prisma.event.findUnique({
     where: { id: req.params.id },
     include: {
-      organizer: { select: { id: true, name: true, bio: true } },
+      organizer: { select: { id: true, name: true } },
       _count: { select: { rsvps: true } },
     },
   });
@@ -187,7 +187,7 @@ router.get("/:id/rsvp/me", requireAuth, async (req, res) => {
 router.get("/:id/attendees", async (req, res) => {
   const attendees = await prisma.rsvp.findMany({
     where: { eventId: req.params.id, status: "GOING" },
-    include: { user: { select: { id: true, name: true, avatar: true } } },
+    include: { user: { select: { id: true, name: true } } },
   });
   res.json(attendees);
 });
@@ -201,7 +201,7 @@ router.get("/:id/reviews", async (req, res) => {
   const reviews = await prisma.review.findMany({
     where: { eventId: req.params.id },
     orderBy: { createdAt: "desc" },
-    include: { user: { select: { id: true, name: true, avatar: true } } },
+    include: { user: { select: { id: true, name: true } } },
   });
   res.json(reviews);
 });
@@ -223,7 +223,7 @@ router.post("/:id/reviews", requireAuth, async (req, res) => {
       userId: req.auth!.userId,
       eventId: event.id,
     },
-    include: { user: { select: { id: true, name: true, avatar: true } } },
+    include: { user: { select: { id: true, name: true } } },
   });
 
   res.status(201).json(review);
