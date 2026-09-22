@@ -123,7 +123,7 @@ Logging out just removes the token client-side. There's no refresh token and no 
 
 From `backend/prisma/schema.prisma`:
 
-- **User** — email, password hash, name, optional bio/avatar. Organizes events, has rsvps and reviews.
+- **User** — email, password hash, name. Organizes events, has rsvps and reviews.
 - **Event** — title, description, optional cover image, startDate, location, isOnline/onlineUrl, category, tags (stored as a comma-separated string, not a real array). Belongs to one organizer.
 - **Rsvp** — status is `GOING`, `INTERESTED`, or `NOT_GOING`. One per user per event (upsert on repeat calls).
 - **Review** — rating 1–5 plus a comment, tied to a user and an event.
